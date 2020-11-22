@@ -37,3 +37,13 @@ resource "aws_s3_bucket_object" "index" {
   cache_control = "no-cache"
   content_type = "text/html"
 }
+
+resource "aws_s3_bucket_object" "favicon" {
+  bucket = aws_s3_bucket.benstepp.id
+  key = "favicon.ico"
+  source = "./dist/favicon.ico"
+  etag = filemd5("./dist/favicon.ico")
+  acl = "public-read"
+  cache_control = "no-cache"
+  content_type = "image/x-icon"
+}
