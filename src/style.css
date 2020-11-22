@@ -1,0 +1,96 @@
+:root {
+  --background: #222224;
+  --copy: #cccccc;
+  --link: #eeeeee;
+  --hover: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ddddde;
+    --copy: #333333;
+    --link: #111111;
+    --hover: #000000;
+  }
+}
+
+html {
+  background-color: var(--background);
+  color: var(--copy);
+  font-family: monospace;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+body {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+a,
+a:visited {
+  color: var(--link);
+}
+
+a:hover,
+a:active {
+  color: var(--hover);
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+.pronouns {
+  opacity: 0.8;
+  font-size: 0.8rem;
+  margin-top: 0rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+
+.cursor {
+  background-color: var(--copy);
+  display: none;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cursor {
+    display: inline-block;
+    animation: blink 2s infinite;
+  }
+}
